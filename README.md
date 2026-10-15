@@ -1,11 +1,11 @@
 <div align="center">
 
-# 🏆 Darwin-27B-ZTC-v2 — #1 on S1MB
+# 🏆 Darwin-27B-ZTC-v5 · #1 on S1MB (English & Japanese)
 
-### The System One Mosaic Benchmark, ranked #1 of 102 models. A typed-decision judge that scores a decision in a single forward pass, with zero generated tokens.
+### The System One Mosaic Benchmark, ranked #1 in English (160 models) and Japanese (16 models). A typed-decision judge that scores a decision in a single forward pass, with zero generated tokens.
 
-[![S1MB #1](https://img.shields.io/badge/S1MB-%231_of_102-ff6b8b?style=for-the-badge)](https://huggingface.co/spaces/hotchpotch/S1MB-leaderboard)
-[![Model](https://img.shields.io/badge/%F0%9F%A4%97_Model-Darwin--27B--ZTC--v2-ffb020?style=for-the-badge)](https://huggingface.co/FINAL-Bench/Darwin-27B-ZTC-v2)
+[![S1MB #1](https://img.shields.io/badge/S1MB-%231_EN_%26_JP-ff6b8b?style=for-the-badge)](https://huggingface.co/spaces/hotchpotch/S1MB-leaderboard)
+[![Model](https://img.shields.io/badge/%F0%9F%A4%97_Model-Darwin--27B--ZTC--v5-ffb020?style=for-the-badge)](https://huggingface.co/FINAL-Bench/Darwin-27B-ZTC-v5)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue?style=for-the-badge)](LICENSE)
 
 [![Website](https://img.shields.io/badge/Website-vidraft.net-4ea8ff)](https://vidraft.net)
@@ -18,7 +18,7 @@
 
 ---
 
-**Darwin-27B-ZTC-v2** is VIDRAFT's typed-decision judge. On the **System One Mosaic Benchmark (S1MB)** it ranks **#1 overall among 102 models**. It reads a decision problem — a condition, a set of choices, a score to assign — and returns its judgement in **one forward pass, generating zero tokens**, using the [ZTC (Zero-Token Confidence)](https://github.com/final-bench/ztc) method.
+**Darwin-27B-ZTC-v5** is VIDRAFT's typed-decision judge. On the **System One Mosaic Benchmark (S1MB)** it ranks **#1 overall in both English (160 models) and Japanese (16 models)**. It reads a decision problem — a condition, a set of choices, a score to assign — and returns its judgement in **one forward pass, generating zero tokens**, using the [ZTC (Zero-Token Confidence)](https://github.com/final-bench/ztc) method.
 
 The weights are on Hugging Face. This repository holds the result, the benchmark context, and how to run the model.
 
@@ -26,7 +26,8 @@ The weights are on Hugging Face. This repository holds the result, the benchmark
 
 | Rank | Benchmark | Field | Models | Result |
 |---|---|---|---|---|
-| **#1** | S1MB (System One Mosaic Benchmark) | Typed decisions | 102 | **1st overall** |
+| **#1** | S1MB English (System One Mosaic) | Typed decisions | 160 | **1st overall · Borda 90.80** |
+| **#1** | S1MB Japanese | Typed decisions | 16 | **1st overall · Borda 84.57** |
 
 - Leaderboard: https://huggingface.co/spaces/hotchpotch/S1MB-leaderboard
 - Typed-decision accuracy: **0.743** zero-shot, #1.
@@ -40,7 +41,7 @@ S1MB (System One Mosaic Benchmark) evaluates a model's fast, intuitive "System 1
 
 | Model | Role | Params | Hugging Face |
 |---|---|---|---|
-| **Darwin-27B-ZTC-v2** | Typed-decision judge, **#1 on S1MB** | 27B | [link](https://huggingface.co/FINAL-Bench/Darwin-27B-ZTC-v2) |
+| **Darwin-27B-ZTC-v2** | Typed-decision judge, **#1 on S1MB** | 27B | [link](https://huggingface.co/FINAL-Bench/Darwin-27B-ZTC-v5) |
 | Darwin-27B-ZTC | Typed-decision judge (v1) | 27B | [link](https://huggingface.co/FINAL-Bench/Darwin-27B-ZTC) |
 | Darwin-397B-ZTC | Largest judge | 397B | [link](https://huggingface.co/FINAL-Bench/Darwin-397B-ZTC) |
 
@@ -64,7 +65,7 @@ Full method and inference code (`ztc_judge.py`, `usage_curve.py`): **[github.com
 
 ```python
 from transformers import AutoModel, AutoTokenizer
-# weights: https://huggingface.co/FINAL-Bench/Darwin-27B-ZTC-v2
+# weights: https://huggingface.co/FINAL-Bench/Darwin-27B-ZTC-v5
 # decision scoring code: https://github.com/final-bench/ztc
 ```
 
